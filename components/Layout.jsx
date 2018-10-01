@@ -29,6 +29,6 @@ export default ({children, title = 'Feed Me App'}) => (
       <p>Find Niya Funsy</p>
     </footer>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH54jDX4HBGXjyMLxPwqtpajWi0vG6EBk&libraries=places"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH54jDX4HBGXjyMLxPwqtpajWi0vG6EBk&libraries=places&callback=initialize" async defer></script>
   </div>
 );

@@ -13,7 +13,7 @@ class FeedDisplay extends Component {
 
   render () {
     return (
-      <div>{this.resultFeed()}</div>
+      <div id="map">{this.resultFeed()}</div>
     );
   }
 }
