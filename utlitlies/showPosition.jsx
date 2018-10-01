@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
+import Router from 'next/router'
+
+
 
 export const showPostion = (position) => {
-  let lat = position.coords.latitude
-  let long = position.coords.longitude
-  console.log(lat, long);
+  let la = position.coords.latitude
+  let lo = position.coords.longitude
+
+  Router.push({
+    pathname: '/food',
+    query: {
+      lat: la,
+      lon: lo,
+    }
+  })
+
 }

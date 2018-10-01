@@ -14,7 +14,7 @@ export default ({children, title = 'Feed Me App'}) => (
             type="text/css"/>
       <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
               integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB"
-              crossorigin="anonymous"></script>
+              crossOrigin="anonymous"></script>
     </Head>
 
     <header>
@@ -29,5 +29,6 @@ export default ({children, title = 'Feed Me App'}) => (
       <p>Find Niya Funsy</p>
     </footer>
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBH54jDX4HBGXjyMLxPwqtpajWi0vG6EBk&libraries=places"></script>
   </div>
 );

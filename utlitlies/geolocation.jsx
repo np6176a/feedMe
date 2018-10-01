@@ -3,9 +3,8 @@ import { showPostion } from './showPosition'
 
 export const getLocation = ()=> {
     if (navigator.geolocation) {
-      let position = navigator.geolocation.getCurrentPosition(showPostion);
+      let post = navigator.geolocation.getCurrentPosition(showPostion);
     } else {
-      // return("Geolocation is not supported by this browser.");
-      console.log('Error');
+      return("Geolocation is not supported by this browser.");
     }
 };
