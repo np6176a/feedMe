@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const findRandomRestaurant = async () => {
   // Retrieve lat - lng from params\
   const { lat, lon } = retreiveLocationParams()
@@ -20,9 +22,10 @@ export const retrieveRestaurantsFromGoogle = (lat, lon)=> {
   const MAP_KEY = process.env.REACT_APP_MAP_KEY
   const getURL ='https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&radius=1500&type=restaurant&opennow=true&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=' + MAP_KEY
 
-  return fetch(getURL)
+  return axios.get(getURL)
 }
 
 const pickRandomRestaurant = (result) => {
-
+  console.log(result)
+  return 'Still Testing'
 }

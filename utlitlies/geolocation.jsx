@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { showPostion } from './showPosition'
+import { showPosition } from './showPosition'
 
 export const getLocation = ()=> {
     if (navigator.geolocation) {

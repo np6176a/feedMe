@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { feedMap } from '../utlitlies/gmap'
+import { findRandomRestaurant, retrieveLocationParams, retrieveRestaurantsFromGoogle } from '../utlitlies/gmap'
 
 class FeedDisplay extends Component {
   constructor (props) {
@@ -12,19 +12,21 @@ class FeedDisplay extends Component {
   componentDidMount () {
     findRandomRestaurant()
       .then(restaurant => {
-        this.setState({place: res})
+        this.setState({place: restaurant})
       })
 
   }
 
   render () {
-    const {place} = this.state
+    const { place } = this.state
+
+
 
     if (!place) {
       return <div>Loading Place...</div>
     }
     return (
-      <div>{place}</div>
+      <div>{ place }</div>
     )
 
   }
