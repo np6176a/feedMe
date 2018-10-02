@@ -1,39 +1,28 @@
-import React, { Component } from 'react'
+export const findRandomRestaurant = async () => {
+  // Retrieve lat - lng from params\
+  const { lat, lon } = retreiveLocationParams()
+  // Retrieve Restaurants from Google
+  const result = await retrieveRestaurantsFromGoogle(lat, lon)
+  // Pick a random restaurnt
+  return pickRandomRestaurant(result)
 
-export const feedMap = ()=> {
-  let map;
-  let service;
-  let infowindow;
+}
 
-  let urlString = window.location.href;
-  let url = new URL(urlString);
-  let lat = url.searchParams.get('lat');
-  let lon = url.searchParams.get('lon');
+export const retrieveLocationParams = () => {
+  const urlString = window.location.href
+  const url = new URL(urlString)
+  const lat = url.searchParams.get('lat')
+  const lon = url.searchParams.get('lon')
+  return { lat, lon }
+}
 
-  function initialize() {
-    let currentLoc = new google.maps.LatLng(lat,lon);
+export const retrieveRestaurantsFromGoogle = (lat, lon)=> {
+  const MAP_KEY = process.env.REACT_APP_MAP_KEY
+  const getURL ='https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&radius=1500&type=restaurant&opennow=true&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=' + MAP_KEY
 
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: currentLoc,
-      zoom: 15
-    });
+  return fetch(getURL)
+}
 
-    let request = {
-      location: currentLoc,
-      radius: '500',
-      type: ['restaurant']
-    };
+const pickRandomRestaurant = (result) => {
 
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-  }
-
-  function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        createMarker(results[i]);
-      }
-    }
-  }
 }

@@ -3,18 +3,30 @@ import { feedMap } from '../utlitlies/gmap'
 
 class FeedDisplay extends Component {
   constructor (props) {
-    super (props);
-    this.resultFeed = this.resultFeed.bind(this);
+    super(props)
+    this.state = {
+      place: null
+    }
   }
 
-  resultFeed(){
-    feedMap();
+  componentDidMount () {
+    findRandomRestaurant()
+      .then(restaurant => {
+        this.setState({place: res})
+      })
+
   }
 
   render () {
+    const {place} = this.state
+
+    if (!place) {
+      return <div>Loading Place...</div>
+    }
     return (
-      <div id="map">{this.resultFeed()}</div>
-    );
+      <div>{place}</div>
+    )
+
   }
 }
 
