@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "axios": "^0.18.0",
+    "less": "^3.8.1",
+    "next": "^7.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "proxy": "http://localhost:5000/"
+}

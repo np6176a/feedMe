@@ -1,15 +1,15 @@
 {
-  "dependencies": {
-    "@zeit/next-less": "^1.0.1",
-    "axios": "^0.18.0",
-    "less": "^3.8.1",
-    "next": "^7.0.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
-  },
+  "name": "feed-me-express",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js"
+//    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
   }
 }
