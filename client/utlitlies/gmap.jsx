@@ -4,7 +4,9 @@ export const findRandomRestaurant = () => {
   const loc =  retrieveLocationParams()
   // Retrieve Restaurants from Google
   return retrieveRestaurantsFromGoogle(loc)
-    .then(data => pickRandomRestaurant(data))
+    .then(data => {
+      return pickRandomRestaurant(data)
+    })
 }
 
 export const retrieveLocationParams = () => {
@@ -20,9 +22,6 @@ export const retrieveRestaurantsFromGoogle = ({lat,lon}) => {
   return axios.post('http://localhost:5000/find-food', { lat,lon })
 }
 
-const pickRandomRestaurant = (data) => {
-  debugger;
-  console.log(data);
-  // const result = data.results[Math.floor(Math.random() * data.results.length)]
-  // return result
+export const pickRandomRestaurant = (data) => {
+  return data.data.results[Math.floor(Math.random() * data.data.results.length)]
 }

@@ -5,21 +5,21 @@ class FeedDisplay extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      place: []
+      place: {}
     }
   }
-  componentDidMount () {
 
+  componentDidMount () {
     findRandomRestaurant()
-      .then(result => {
-        this.setState({place: result})
+      .then(data => {
+        this.setState({ place: data })
       })
   }
 
   render () {
-
+   const { place } = this.state
     return (
-      <div>{ this.place }</div>
+      <div>{ place.name }</div>
     )
 
   }
