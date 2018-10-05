@@ -1,31 +1,28 @@
 import axios from 'axios'
 
-export const findRandomRestaurant = async () => {
-  // Retrieve lat - lng from params\
-  const { lat, lon } = retreiveLocationParams()
+export const findRandomRestaurant = () => {
+  const loc =  retrieveLocationParams()
   // Retrieve Restaurants from Google
-  const result = await retrieveRestaurantsFromGoogle(lat, lon)
-  // Pick a random restaurnt
-  return pickRandomRestaurant(result)
-
+  return retrieveRestaurantsFromGoogle(loc)
+    .then(data => pickRandomRestaurant(data))
 }
 
 export const retrieveLocationParams = () => {
   const urlString = window.location.href
   const url = new URL(urlString)
-  const lat = url.searchParams.get('lat')
-  const lon = url.searchParams.get('lon')
-  return { lat, lon }
+  const lat = url.searchParams.get('latitude')
+  const lon = url.searchParams.get('longitude')
+  return {lat, lon}
 }
 
-export const retrieveRestaurantsFromGoogle = (lat, lon)=> {
-  const MAP_KEY = process.env.REACT_APP_MAP_KEY
-  const getURL ='https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + lat + ',' + lon + '&radius=1500&type=restaurant&opennow=true&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=' + MAP_KEY
 
-  return axios.get(getURL)
+export const retrieveRestaurantsFromGoogle = ({lat,lon}) => {
+  return axios.post('http://localhost:5000/find-food', { lat,lon })
 }
 
-const pickRandomRestaurant = (result) => {
-  console.log(result)
-  return 'Still Testing'
+const pickRandomRestaurant = (data) => {
+  debugger;
+  console.log(data);
+  // const result = data.results[Math.floor(Math.random() * data.results.length)]
+  // return result
 }

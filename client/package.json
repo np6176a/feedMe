@@ -11,6 +11,5 @@
     "dev": "next",
     "build": "next build",
     "start": "next start"
-  },
-  "proxy": "http://localhost:5000/"
+  }
 }
