@@ -5,7 +5,7 @@ import FindFood from '../components/FindFood'
 
 export default () => (
 
-  <Layout title="Feed Me App">
+  <Layout title="Feeme">
     <FindFood />
   </Layout>
 

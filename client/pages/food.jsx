@@ -4,7 +4,7 @@ import FeedDisplay from '../components/FeedDisplay'
 
 export default () => (
 
-  <Layout title="Food">
+  <Layout title="Feeme Now">
     <FeedDisplay />
   </Layout>
 
