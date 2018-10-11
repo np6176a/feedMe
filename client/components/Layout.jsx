@@ -1,8 +1,21 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import Router from 'next/router'
+
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`)
+})
+
+Router.events.on('routeChangeComplete', () => {
+  console.log('Done')
+})
+Router.events.on('routeChangeError', () => {
+  console.log('Yep done')
+})
 
 require('../css/foodStyle.less')
-// props = { title: "Feed Me App", children }
+
+
 export default ({children, title = 'Feeme App'}) => (
   <div>
     <Head>
