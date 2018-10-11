@@ -26,11 +26,11 @@ class FindFood extends Component {
 
   constructor (props) {
     super(props)
-    this.state = {
-      isVisible: true
-    }
     this.handleClick = this.handleClick.bind(this)
-
+    this.state = {
+      isVisible: true,
+      loading: false
+    }
   }
 
 
@@ -42,11 +42,16 @@ class FindFood extends Component {
 
   componentWillUnMount() {
     clearInterval(this.animateRep)
+    this.state.loading = false
   }
 
 
   handleClick (error) {
-    getLocation()
+    this.setState({ loading: true })
+    setTimeout(() =>{
+      getLocation()
+      this.state.loading = false
+    },2000)
   }
 
   render () {
@@ -66,6 +71,9 @@ class FindFood extends Component {
             <span className='hunger'>Sooo Hungry!</span>
             <img src='/static/hungry.svg'/>
           </button>
+          { this.state.loading && <div className='loadImg'>
+            <div className='loadWrap'><img src="/static/femee-load.gif" /></div>
+          </div> }
         </div>
 
         <style jsx>{`

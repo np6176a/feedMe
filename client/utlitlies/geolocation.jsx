@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import { showPosition } from './showPosition'
 
 export const getLocation = ()=> {
