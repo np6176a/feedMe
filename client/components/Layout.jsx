@@ -27,9 +27,11 @@ const Layout = ({ children, title }) => (
 
     <header className='row center-xs'>
       <nav className='col-xs-12'>
-        <Link href='/'><a>
-          <img src='/static/feed-me.svg' />
-        </a></Link>
+        <Link href='/'>
+          <a>
+            <img src='/static/feed-me.svg' />
+          </a>
+        </Link>
       </nav>
     </header>
 
@@ -37,8 +39,13 @@ const Layout = ({ children, title }) => (
 
     <footer className='row center-xs'>
       <div className='col-xs-12'>
-        <p>Pattern:<a href='https://www.freepik.com/free-vector/sketchy-kitchen-pattern_792937.htm'> Designed by Freepik</a></p>
-        <p className='copy'>A Find Niya App</p>
+        <p>
+          Pattern:
+          <a href='https://www.freepik.com/free-vector/sketchy-kitchen-pattern_792937.htm'> Designed by Freepik</a>
+        </p>
+        <p className='copy'>
+          A Find Niya App
+        </p>
       </div>
     </footer>
   </div>

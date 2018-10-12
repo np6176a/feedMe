@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { getLocation } from '../utlitlies/geolocation'
-import _JSXStyle from 'styled-jsx/style'
+import _JSXStyle from 'styled-jsx/style' // eslint-disable-line
 import posed from 'react-pose'
 
 const Popparent = posed.div({
-  hidden:{
-    opacity:0,
+  hidden: {
+    opacity: 0,
     staggerChildren: 500
   },
-  visible:{
-    opacity:1,
+  visible: {
+    opacity: 1,
     staggerChildren: 500
   },
   transition: {
@@ -17,13 +17,11 @@ const Popparent = posed.div({
   }
 })
 const Pop = posed.span({
-  hidden: {opacity: 0},
-  visible: {opacity: 1},
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
 })
 
-
 class FindFood extends Component {
-
   constructor (props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
@@ -33,47 +31,56 @@ class FindFood extends Component {
     }
   }
 
-
-  componentDidMount() {
+  componentDidMount () {
     this.animateRep = setInterval(() => {
-      this.setState({ isVisible: !this.state.isVisible });
-    }, 2000);
+      this.setState({ isVisible: !this.state.isVisible })
+    }, 2000)
   }
 
-  componentWillUnMount() {
+  componentWillUnmount () {
     clearInterval(this.animateRep)
-    this.state.loading = false
   }
 
-
-  handleClick (error) {
+  handleClick () {
     this.setState({ loading: true })
-    setTimeout(() =>{
+    // Promise.all
+    // [
+    //   get location,
+    //   setTimeout (min animation time)
+    // ]
+    // then (set loading false)
+    // then go to other page
+    setTimeout(() => {
       getLocation()
-      this.state.loading = false
-    },2000)
+      // this.setState({ loading: false })
+    }, 2000)
   }
 
   render () {
-
     return (
       <div className='row center-xs middle-xs container'>
         <h1 className='col-xs-12'>Trouble Deciding On Lunch?</h1>
-        <p className='col-xs-12'>Click FEEME here <i className="fas fa-arrow-down"></i> to find food NOW </p>
+        <p className='col-xs-12'>
+          {'Click FEEME here '}
+          <i className='fas fa-arrow-down' />
+          {' to find food NOW'}
+        </p>
 
         <div className='col-xs-12'>
           <button className='btn' onClick={this.handleClick}>
             <Popparent pose={this.state.isVisible ? 'hidden' : 'visible'}>
-            <Pop className='pop'>rumble</Pop>
-            <Pop className='pop'>growl</Pop>
-            <Pop className='pop'>grumble</Pop>
+              <Pop className='pop'>rumble</Pop>
+              <Pop className='pop'>growl</Pop>
+              <Pop className='pop'>grumble</Pop>
             </Popparent>
             <span className='hunger'>Sooo Hungry!</span>
-            <img src='/static/hungry.svg'/>
+            <img src='/static/hungry.svg' />
           </button>
-          { this.state.loading && <div className='loadImg'>
-            <div className='loadWrap'><img src="/static/femee-load.gif" /></div>
-          </div> }
+          {this.state.loading && <div className='loadImg'>
+            <div className='loadWrap'>
+              <img src='/static/femee-load.gif' />
+            </div>
+          </div>}
         </div>
 
         <style jsx>{`

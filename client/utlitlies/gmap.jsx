@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const findRandomRestaurant = () => {
-  const loc =  retrieveLocationParams()
+  const loc = retrieveLocationParams()
   // Retrieve Restaurants from Google
   return retrieveRestaurantsFromGoogle(loc)
     .then(data => {
@@ -14,12 +14,11 @@ export const retrieveLocationParams = () => {
   const url = new URL(urlString)
   const lat = url.searchParams.get('latitude')
   const lon = url.searchParams.get('longitude')
-  return {lat, lon}
+  return { lat, lon }
 }
 
-
-export const retrieveRestaurantsFromGoogle = ({lat,lon}) => {
-  return axios.post('http://localhost:5000/find-food', { lat,lon })
+export const retrieveRestaurantsFromGoogle = ({ lat, lon }) => {
+  return axios.post('http://localhost:5000/find-food', { lat, lon })
 }
 
 export const pickRandomRestaurant = (data) => {

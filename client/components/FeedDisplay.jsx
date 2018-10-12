@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { findRandomRestaurant, retrieveLocationParams } from '../utlitlies/gmap'
-import _JSXStyle from 'styled-jsx/style'
+import { findRandomRestaurant } from '../utlitlies/gmap'
+import _JSXStyle from 'styled-jsx/style' // eslint-disable-line
 // import posed from 'react-pose'
 
 class FeedDisplay extends Component {
@@ -15,28 +15,24 @@ class FeedDisplay extends Component {
   componentDidMount () {
     findRandomRestaurant()
       .then(data => {
-        this.setState({place: data})
+        this.setState({ place: data })
       })
-      .catch(error =>{
+      .catch(() => {
         this.setState({
           hasError: true
         })
       })
   }
-
-
   render () {
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
         <div className='container row center-xs'>
-          <h2 className='col-xs-12'>Oops Feeme Got Lost, Please Refresh@</h2>
+          <h2 className='col-xs-12'>Oops Feeme Got Lost, Please Refresh</h2>
           <div className='yay-feeme col-xs-12'>
             <p>So Lost!</p>
             <img src='/static/femee-load.gif' />
           </div>
-
-
           <style jsx>{`
         h2 {
           color:#AB4E68;
@@ -56,7 +52,7 @@ class FeedDisplay extends Component {
         </div>
       )
     }
-    const {place} = this.state
+    const { place } = this.state
     return (
       <div className='container row center-xs'>
 
@@ -66,8 +62,6 @@ class FeedDisplay extends Component {
           <p>YAY, FOOD!</p>
           <img src='/static/yay.svg' />
         </div>
-
-
         <style jsx>{`
         h2 {
           color:#AB4E68;
@@ -86,7 +80,6 @@ class FeedDisplay extends Component {
         `}</style>
       </div>
     )
-
   }
 }
 
