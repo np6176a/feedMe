@@ -9,7 +9,6 @@ module.exports = (app) => {
     axios.get(apiUrl)
       .then(data => {
         res.send(data.data)
-        console.log(data)
       })
       .catch(error => {
         res.send('Oops Google Error!')

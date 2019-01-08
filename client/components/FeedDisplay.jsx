@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { findRandomRestaurant } from '../utlitlies/gmap'
 import _JSXStyle from 'styled-jsx/style' // eslint-disable-line
-// import posed from 'react-pose'
 
 class FeedDisplay extends Component {
   constructor (props) {

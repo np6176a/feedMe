@@ -1,59 +1,22 @@
 import React, { Component } from 'react'
 import { getLocation } from '../utlitlies/geolocation'
 import _JSXStyle from 'styled-jsx/style' // eslint-disable-line
-import posed from 'react-pose'
-
-const Popparent = posed.div({
-  hidden: {
-    opacity: 0,
-    staggerChildren: 500
-  },
-  visible: {
-    opacity: 1,
-    staggerChildren: 500
-  },
-  transition: {
-    duration: 400
-  }
-})
-const Pop = posed.span({
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 }
-})
 
 class FindFood extends Component {
   constructor (props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
     this.state = {
-      isVisible: true,
       loading: false
     }
   }
 
-  componentDidMount () {
-    this.animateRep = setInterval(() => {
-      this.setState({ isVisible: !this.state.isVisible })
-    }, 2000)
-  }
-
-  componentWillUnmount () {
-    clearInterval(this.animateRep)
-  }
-
   handleClick () {
     this.setState({ loading: true })
-    // Promise.all
-    // [
-    //   get location,
-    //   setTimeout (min animation time)
-    // ]
-    // then (set loading false)
-    // then go to other page
     setTimeout(() => {
       getLocation()
       // this.setState({ loading: false })
-    }, 2000)
+    }, 1000)
   }
 
   render () {
@@ -68,12 +31,6 @@ class FindFood extends Component {
 
         <div className='col-xs-12'>
           <button className='btn' onClick={this.handleClick}>
-            <Popparent pose={this.state.isVisible ? 'hidden' : 'visible'}>
-              <Pop className='pop'>rumble</Pop>
-              <Pop className='pop'>growl</Pop>
-              <Pop className='pop'>grumble</Pop>
-            </Popparent>
-            <span className='hunger'>Sooo Hungry!</span>
             <img src='/static/hungry.svg' />
           </button>
           {this.state.loading && <div className='loadImg'>
