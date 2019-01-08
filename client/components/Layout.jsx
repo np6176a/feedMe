@@ -12,12 +12,11 @@ const Layout = ({ children, title }) => (
       <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
 
-      <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' />
+      <link href='https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:400,500' rel='stylesheet' />
       <link
         rel='stylesheet'
         href='https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css'
-        type='text/css'
-      />
+        type='text/css' />
       <script
         defer src='https://use.fontawesome.com/releases/v5.3.1/js/all.js'
         integrity='sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB'
@@ -25,28 +24,33 @@ const Layout = ({ children, title }) => (
       />
     </Head>
 
-    <header className='row center-xs'>
-      <nav className='col-xs-12'>
-        <Link href='/'>
-          <a>
-            <img src='/static/feed-me.svg' />
+    <header className='row'>
+      <nav className='row col-xs-12 middle-xs'>
+        <div className='col-xs-6'>
+          <Link href='/'>
+            <a>
+              <div className='logo'>
+                <img src='/static/logo.svg' />
+              </div>
+              <h3>Feeme</h3>
+            </a>
+          </Link>
+        </div>
+        <div className='col-xs-6 end-xs link'>
+          <a href='#'>
+            Go To FindNiya
           </a>
-        </Link>
+        </div>
       </nav>
+      <span className='logoShadow' />
     </header>
 
     {children}
 
-    <footer className='row center-xs'>
-      <div className='col-xs-12'>
-        <p>
-          Pattern:
-          <a href='https://www.freepik.com/free-vector/sketchy-kitchen-pattern_792937.htm'> Designed by Freepik</a>
-        </p>
-        <p className='copy'>
-          A Find Niya App
-        </p>
-      </div>
+    <footer className='row end-xs'>
+      <p className='col-xs-12'>
+        A Find Niya App
+      </p>
     </footer>
   </div>
 )

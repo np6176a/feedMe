@@ -21,18 +21,24 @@ class FindFood extends Component {
 
   render () {
     return (
-      <div className='row center-xs middle-xs container'>
-        <h1 className='col-xs-12'>Trouble Deciding On Lunch?</h1>
-        <p className='col-xs-12'>
-          {'Click FEEME here '}
-          <i className='fas fa-arrow-down' />
-          {' to find food NOW'}
-        </p>
-
-        <div className='col-xs-12'>
-          <button className='btn' onClick={this.handleClick}>
-            <img src='/static/hungry.svg' />
-          </button>
+      <section className='row middle-xs'>
+        <div className='col-xs-10 grayGrad'>
+          <div className='box'>
+            <h1>Too Hungry To Think?</h1>
+            <p>Feeme will help you find food nearby without the need to make hard choices. With just one click Feeme
+              will
+              quickly scour your area and point you to a food source.</p>
+            <p>No more crippling choices between pizza or tacos, Feeme will decide. Give your hungry brain a break!</p>
+            <p style={{ color: '#0d0d0d' }}>Just click on the hungry Feeme to get eating.</p>
+          </div>
+        </div>
+        <div className='col-xs-2 center-xs yellow'>
+          <div className='btn-wrap'>
+            <button className='btn' onClick={this.handleClick}>
+              <img src='/static/hungry.svg' />
+            </button>
+            <h3>Soo Hungry</h3>
+          </div>
           {this.state.loading && <div className='loadImg'>
             <div className='loadWrap'>
               <img src='/static/femee-load.gif' />
@@ -41,31 +47,29 @@ class FindFood extends Component {
         </div>
 
         <style jsx>{`
-        .btn {
-          margin: 60px auto 0;
-          width: 300px;
-          background:transparent;
-          border: none;
+        .grayGrad, .yellow{
+          height: calc(100vh - 80px);
+        }
+        .yellow{
           position: relative;
         }
-        .btn img{
-          max-width: 100px;
-          max-height: 200px;
-          object-fit: contain;
-          margin: 0 auto;
+        .yellow:before{
+          content:'';
           display: block;
-          margin-top: 10px
+          background:url('/static/verticalWave.svg') no-repeat;
+          background-size: cover;
+          background-position: left top;
+          width: 100px;
+          height: calc(100vh - 80px);
+          position: absolute;
+          top: 0;
+          left: -80px;
         }
-        .btn span{
-        display: block;
-        font-weight: 700;
-        font-size: 120%;
-        color:#AB4E68;
-        text-align: center;
+        .box{
+          margin: 100px auto 0 50px;
         }
-
        `}</style>
-      </div>
+      </section>
     )
   }
 }
