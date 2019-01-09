@@ -17,6 +17,6 @@ With one click Feeme will find you a source of food nearby.
 
 ##Contribution
 
-![FindNiya Logo](readme_img/logo-fn.png)
+![FindNiya Logo](readme_img/logo-fn2.png)
 
 This project is maintained by [FindNiya](https://www.findniya.com/).
