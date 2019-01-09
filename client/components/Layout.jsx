@@ -30,7 +30,7 @@ const Layout = ({ children, title }) => (
           <Link href='/'>
             <a>
               <div className='logo'>
-                <img src='/static/logo.svg' />
+                <img src='/static/feed-me.svg' />
               </div>
               <h3>Feeme</h3>
             </a>

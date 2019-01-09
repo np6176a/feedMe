@@ -190,3 +190,40 @@ footer{
     font-size: 187%;
   }
 }
+
+
+//the loading
+.loadImg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(237, 237, 237, 0.9);
+  z-index: 4;
+  .loadWrap{
+    text-align: center;
+    background: url("/static/horizontalTop.svg") no-repeat;
+    background-size:contain;
+    background-position: center top;
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    .loadContent{
+      position: absolute;
+      width: 100%;
+      top: 20%;
+      left: 0;
+    }
+    h3{
+      color: @gray;
+      font-size: 187%;
+      margin: 0;
+    }
+    img{
+      max-width: 400px;
+      max-height: 400px;
+      margin: 0 auto;
+    }
+  }
+}

@@ -15,8 +15,7 @@ class FindFood extends Component {
     this.setState({ loading: true })
     setTimeout(() => {
       getLocation()
-      // this.setState({ loading: false })
-    }, 1000)
+    }, 2000)
   }
 
   render () {
@@ -39,11 +38,16 @@ class FindFood extends Component {
             </button>
             <h3>Soo Hungry</h3>
           </div>
-          {this.state.loading && <div className='loadImg'>
+          {this.state.loading &&
+          <div className='loadImg'>
             <div className='loadWrap'>
-              <img src='/static/femee-load.gif' />
+              <div className='loadContent'>
+                <h3>Searching...</h3>
+                <img src='/static/femee-load.gif' />
+              </div>
             </div>
-          </div>}
+          </div>
+          }
         </div>
 
         <style jsx>{`
