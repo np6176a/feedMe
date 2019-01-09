@@ -15,7 +15,7 @@ A fun little web app that takes out all the trouble of finding lunch.
 With one click Feeme will find you a source of food nearby.
 
 
-##Contributions
+## Contributions
 
 ![FindNiya Logo](readme_img/logo-fn2.png)
 
