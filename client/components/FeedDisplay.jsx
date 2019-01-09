@@ -8,7 +8,7 @@ class FeedDisplay extends Component {
     this.handleClick = this.handleClick.bind(this)
     this.state = {
       place: {},
-      hasError: false,
+      hasError: false
     }
   }
 
@@ -25,15 +25,7 @@ class FeedDisplay extends Component {
   }
 
   componentDidMount () {
-    findRandomRestaurant()
-      .then(data => {
-        this.setState({ place: data })
-      })
-      .catch(() => {
-        this.setState({
-          hasError: true
-        })
-      })
+    this.handleClick()
   }
 
   render () {
@@ -44,7 +36,7 @@ class FeedDisplay extends Component {
           <h2 className='col-xs-12'>Oops Feeme Got Lost, Please Refresh</h2>
           <div className='yay-feeme col-xs-12'>
             <p>So Lost!</p>
-            <img src='/static/femee-load.gif' />
+            <img src='/static/femee-load.gif'/>
           </div>
           <style jsx>{`
         h2 {
@@ -77,7 +69,7 @@ class FeedDisplay extends Component {
         <div className='col-xs-12 yellow'>
           <div className='badge-wrap'>
             <div className='badge'>
-              <img src='/static/yay.svg' />
+              <img src='/static/yay.svg'/>
             </div>
             <h3>YAY FOOD!</h3>
             <button className='btn-secondary' onClick={this.handleClick}>
