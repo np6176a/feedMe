@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1260" height="362" viewBox="0 0 1260 362">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_5" data-name="Rectangle 5" width="1260" height="362" transform="translate(2710 -670)" fill="none"/>
+    </clipPath>
+    <filter id="Path_5" x="-19" y="8" width="1298" height="368.116" filterUnits="userSpaceOnUse">
+      <feOffset dy="-3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#605f5e" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Mask_Group_2" data-name="Mask Group 2" transform="translate(-2710 670)" clip-path="url(#clip-path)">
+    <g transform="matrix(1, 0, 0, 1, 2710, -670)" filter="url(#Path_5)">
+      <path id="Path_5-2" data-name="Path 5" d="M0,350.116H1280V75.188s-4.789-23.38-33.281-24.872-31.031,7.383-65.711,7.539S1140.984,7.379,1034.766,5.6,860.529,58.93,788.875,57.854C660.711,58.606,703.719.989,579.7,0,440.9-.385,450.617,96.924,327.984,94.239c-105.1-1.584-97.812-78.618-197.961-81.711C31.641,13.538,0,75.188,0,75.188Z" transform="translate(-10 20)" fill="#fbd207"/>
+    </g>
+  </g>
+</svg>

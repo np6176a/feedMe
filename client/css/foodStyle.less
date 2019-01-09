@@ -9,9 +9,11 @@
   background: linear-gradient(to right, rgba(244, 244, 244, 1) 0%, rgba(247, 247, 247, 1) 38%, rgba(237, 237, 237, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#ededed', GradientType=1);
 }
-.yellow{
+
+.yellow {
   background: @accent;
 }
+
 @gray: #605f5e;
 @dark: #0d0d0d;
 @accent: #fbd207;
@@ -28,20 +30,17 @@
 h1, h2, h3 {
   font-family: 'Permanent Marker', cursive;
 }
+
 a, p, span {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
 //defaults
-html{
-  height: 100%;
-}
 body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  height: 100%;
 }
 
 .row {
@@ -67,6 +66,7 @@ header {
     .shadow();
     z-index: 1;
     padding: 0 40px 0 0;
+
     a {
       .logo {
         max-width: 140px;
@@ -97,20 +97,23 @@ header {
         font-size: 125%;
         margin: 0 0 0 160px;
       }
-      &:hover{
-        img, h3{
+
+      &:hover {
+        img, h3 {
           opacity: 0.6;
         }
       }
     }
-    .link{
-      a{
+
+    .link {
+      a {
         color: @gray;
         font-size: 85%;
         font-weight: 500;
       }
     }
   }
+
   .logoShadow {
     max-width: 140px;
     max-height: 140px;
@@ -127,7 +130,7 @@ header {
 }
 
 //footer styles
-footer{
+footer {
   max-height: 40px;
   width: 100%;
   position: absolute;
@@ -135,7 +138,8 @@ footer{
   left: 0;
   background: transparent;
   padding: 0 10px;
-  p{
+
+  p {
     margin-bottom: 10px;
     color: @gray;
     font-size: 75%;
@@ -143,14 +147,17 @@ footer{
 }
 
 //container
-.box{
+.box {
   max-width: 550px;
   text-align: center;
-  h1{
+
+  h1 {
     font-size: 312.5%;
     margin-bottom: 20px;
+    line-height: 45px;
   }
-  p{
+
+  p {
     color: @gray;
     font-size: 112%;
     line-height: 24px;
@@ -164,36 +171,81 @@ footer{
   position: absolute;
   left: -200px;
   top: 80px;
-  .btn{
+
+  .btn {
     width: 300px;
     height: 300px;
-    background:#fff;
+    background: #fff;
     border: 10px solid @accent;
     text-align: center;
     padding: 30px 0;
     .shadow();
     border-radius: 100%;
-    &:hover{
+
+    &:hover {
       margin-top: -20px;
       cursor: pointer;
       margin-bottom: 20px;
     }
   }
-  img{
+
+  img {
     max-width: 180px;
     max-height: 200px;
     object-fit: contain;
     margin: 0 auto;
   }
-  h3{
+
+  h3 {
     color: @gray;
     font-size: 187%;
   }
 }
 
+.btn-secondary{
+  background: transparent;
+  font-size: 100%;
+  color: @dark;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+//the badege styles
+.badge-wrap {
+  position: absolute;
+  top: -230px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  .badge{
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    border: 3px solid @accent;
+    text-align: center;
+    padding: 0;
+    border-radius: 100%;
+    margin: 0 auto;
+    img {
+      max-width: 130px;
+      max-height: 130px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: 60px auto 0;
+    }
+  }
+  h3 {
+    color: @gray;
+    font-size: 187%;
+  }
+}
 
 //the loading
-.loadImg{
+.loadImg {
   position: fixed;
   top: 0;
   left: 0;
@@ -201,26 +253,30 @@ footer{
   height: 100vh;
   background: rgba(237, 237, 237, 0.9);
   z-index: 4;
-  .loadWrap{
+
+  .loadWrap {
     text-align: center;
     background: url("/static/horizontalTop.svg") no-repeat;
-    background-size:contain;
+    background-size: contain;
     background-position: center top;
     width: 100vw;
     height: 80vh;
     position: relative;
-    .loadContent{
+
+    .loadContent {
       position: absolute;
       width: 100%;
       top: 20%;
       left: 0;
     }
-    h3{
+
+    h3 {
       color: @gray;
       font-size: 187%;
       margin: 0;
     }
-    img{
+
+    img {
       max-width: 400px;
       max-height: 400px;
       margin: 0 auto;

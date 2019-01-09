@@ -46,12 +46,6 @@ const Layout = ({ children, title }) => (
     </header>
 
     {children}
-
-    <footer className='row end-xs'>
-      <p className='col-xs-12'>
-        A Find Niya App
-      </p>
-    </footer>
   </div>
 )
 
