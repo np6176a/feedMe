@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="readme_img/logo-2.png">
+  <img src="readme_img/logo-2.1.png">
 </p>
 
 # FeeMe App
@@ -16,6 +16,7 @@ With one click Feeme will find you a source of food nearby.
 
 
 ##Contribution
+
 ![FindNiya Logo](readme_img/logo-fn.png)
 
 This project is maintained by [FindNiya](https://www.findniya.com/).
