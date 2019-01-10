@@ -18,7 +18,7 @@ export const retrieveLocationParams = () => {
 }
 
 export const retrieveRestaurantsFromGoogle = ({ lat, lon }) => {
-  return axios.post('http://localhost:5000/find-food', { lat, lon })
+  return axios.post('https://feemee-dev.herokuapp.com/find-food', { lat, lon })
 }
 
 export const pickRandomRestaurant = (data) => {
